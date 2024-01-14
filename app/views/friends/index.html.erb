@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Friends List</h1>
+<br>
+
+<div id="friends">
+  <table class = "table table-hover table-striped">
+    <tr>
+      <td><strong>First name</strong></td>
+      <td><strong>Last name</strong></td>
+      <td><strong>Email</strong></td>
+      <td><strong>Phone</strong></td>
+      <td><strong>Twitter</strong></td>
+      <td></td>
+    </tr>
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%=friend.first_name%></td>
+        <td><%=friend.last_name%></td>
+        <td><%=friend.email%></td>
+        <td><%=friend.phone%></td>
+        <td><%=friend.twitter%></td>
+        <td>
+          <%= link_to "View", friend, class:"btn btn-secondary"%>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<br>
+
+<%= link_to "Add New friend", new_friend_path, class:"btn btn-dark" %>
